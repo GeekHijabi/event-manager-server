@@ -15,7 +15,6 @@ class CreateCentresTable extends Migration
     {
         Schema::create('centres', function (Blueprint $table) {
             $table->increments('id');
-            $table->integer('user_id')->references('id')->on('users');
             $table->string('centre_name');
             $table->string('location');
             $table->boolean('isAvailable');
