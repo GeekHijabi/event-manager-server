@@ -18,10 +18,7 @@ class User extends Model implements AuthenticatableContract, AuthorizableContrac
      * @var array
      */
     protected $fillable = [
-        'first_name', 
-        'last_name',
-        'username',
-        'email',
+        'name', 'email',
     ];
 
     /**
@@ -32,20 +29,4 @@ class User extends Model implements AuthenticatableContract, AuthorizableContrac
     protected $hidden = [
         'password',
     ];
-
-    public function events() 
-    {
-        $this->hasMany('App\Model\Events');
-    }
-
-    public function centre()
-    {
-        $this->hasMany('App\Model\Centre');
-    }
-
-    public function role()
-    {
-        $this->hasMany('App/Model/Role');
-    }
-
 }
