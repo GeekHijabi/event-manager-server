@@ -14,3 +14,13 @@
 $router->get('/', function () use ($router) {
     return $router->app->version();
 });
+
+// $router->group(['middleware' => 'validator'], function ($router) {
+        $router->post('/signup', 'UsersController@register');
+        $router->post('/signin', 'UsersController@signin');
+// });
+
+$router->group(['middleware' => 'jwt.auth'], function ($router) {
+    // $router->post('/signin', 'UsersController@signin');    
+    $router->get('{id}/user', 'UsersController@singleUser');
+});

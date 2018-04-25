@@ -14,13 +14,9 @@ class EventsTableSeeder extends Seeder
     public function run()
     {
        DB::table('events')->insert([
-<<<<<<< HEAD
-        'booked_from' => str_random(10),
-=======
->>>>>>> chore(Models and Migration): create models and migration file
-        'venue' => str_random(10),
-        'event_name' => str_random(10),
-        'event_date' => Carbon::create('2018', '01', '01')
+        'name' => str_random(10),
+        'centre_id' => 1,
+        'date' => Carbon::create('2018', '01', '01')
        ]);
     }
 }

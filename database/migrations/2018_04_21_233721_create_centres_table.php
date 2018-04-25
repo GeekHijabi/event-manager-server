@@ -15,9 +15,11 @@ class CreateCentresTable extends Migration
     {
         Schema::create('centres', function (Blueprint $table) {
             $table->increments('id');
-            $table->string('centre_name');
+            $table->string('name')->unique();
             $table->string('location');
             $table->boolean('isAvailable');
+            $table->integer('capacity');
+            $table->json('facilities');
             $table->timestamps();
         });
     }

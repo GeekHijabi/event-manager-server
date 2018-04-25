@@ -14,13 +14,17 @@ class CentresTableSeeder extends Seeder
     public function run()
     {
         DB::table('centres')->insert([
-<<<<<<< HEAD
             'user_id' => 1,
-=======
->>>>>>> chore(Models and Migration): create models and migration file
-            'centre_name' => str_random(15),
             'location' => str_random(25),
             'isAvailable' => True,
+            'capacity' => 100,
+            'facilities' => json_encode(
+                [
+                    'projector' => '1',
+                    'washroom' => '1',
+                    'chairs' => '50'
+                ]
+            )
         ]);
     }
 }
