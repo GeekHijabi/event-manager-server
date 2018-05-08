@@ -15,9 +15,16 @@ class CentresTableSeeder extends Seeder
     {
         DB::table('centres')->insert([
             'user_id' => 1,
-            'centre_name' => str_random(15),
             'location' => str_random(25),
             'isAvailable' => True,
+            'capacity' => 100,
+            'facilities' => json_encode(
+                [
+                    'projector' => '1',
+                    'washroom' => '1',
+                    'chairs' => '50'
+                ]
+            )
         ]);
     }
 }

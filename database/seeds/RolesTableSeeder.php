@@ -13,7 +13,11 @@ class RolesTableSeeder extends Seeder
     public function run()
     {
        DB::table('roles')->insert([
+<<<<<<< HEAD
            'isAdmin' => true
+=======
+           'name' => 'admin'
+>>>>>>> chore(Models and Migration): create models and migration file
        ]);
     }
 }

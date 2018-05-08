@@ -22,6 +22,8 @@ class User extends Model implements AuthenticatableContract, AuthorizableContrac
         'last_name',
         'username',
         'email',
+        'role_id',
+        'password'
     ];
 
     /**
@@ -38,14 +40,9 @@ class User extends Model implements AuthenticatableContract, AuthorizableContrac
         $this->hasMany('App\Model\Events');
     }
 
-    public function centre()
+    public function roles()
     {
-        $this->hasMany('App\Model\Centre');
-    }
-
-    public function role()
-    {
-        $this->hasMany('App/Model/Role');
+        $this->belongsTo('App/Model/Role');
     }
 
 }

@@ -7,7 +7,7 @@ use Illuminate\Database\Eloquent\Model;
 class Events extends Model
 {
     protected $fillable = [
-        'event_name', 'event_date'
+        'name', 'date'
     ];
 
     public function centre()
